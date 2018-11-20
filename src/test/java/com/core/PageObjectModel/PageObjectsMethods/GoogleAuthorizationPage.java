@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import java.util.concurrent.TimeUnit;
 
 public class GoogleAuthorizationPage extends GoogleAuthorizationPageLocators {
+
     public GoogleAuthorizationPage(WebDriver driver) {
         super(driver);
     }

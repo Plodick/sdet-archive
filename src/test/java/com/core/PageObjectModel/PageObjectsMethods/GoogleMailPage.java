@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class GoogleMailPage extends GoogleMailPageLocators {
+
     public GoogleMailPage(WebDriver driver) {
         super(driver);
     }
@@ -29,13 +30,13 @@ public class GoogleMailPage extends GoogleMailPageLocators {
         return Integer.parseInt(countList.get(1).getText());
     }
 
-    public void sendLetter(String mail, String subject, String text)  { // отправка письма
+    public void sendLetter(String mail, String subject, String text) { // отправка письма
         driver.findElement(writeButton).click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(recipientMailField).sendKeys(mail);
         driver.findElement(subjectLetterField).sendKeys(subject);
         driver.findElement(textLetterField).sendKeys(text);
-        driver.findElement(textLetterField).sendKeys(Keys.CONTROL,Keys.ENTER);
+        driver.findElement(textLetterField).sendKeys(Keys.CONTROL, Keys.ENTER);
     }
 
     public boolean checkStatus() // проверка статуса отправки

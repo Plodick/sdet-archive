@@ -4,6 +4,7 @@ import com.core.PageObjectModel.PageObjectsLocators.GoogleHomePageLocators;
 import org.openqa.selenium.WebDriver;
 
 public class GoogleHomePage extends GoogleHomePageLocators {
+
     public GoogleHomePage(WebDriver driver) {
         super(driver);
     }
@@ -16,7 +17,7 @@ public class GoogleHomePage extends GoogleHomePageLocators {
     public GoogleHomePage loginUser(String login, String password) // авторизация
     {
         driver.findElement(loginButton).click();
-        return new GoogleAuthorizationPage(driver).loginUser(login,password);
+        return new GoogleAuthorizationPage(driver).loginUser(login, password);
     }
 
     public GoogleMailPage goToMail() // переход на страницу почты

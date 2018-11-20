@@ -21,8 +21,7 @@ public class MainTest extends BaseTestGrid {
 
     @Test(description = "Инициализация.", priority = 1)
     @Severity(SeverityLevel.CRITICAL)
-    public void initDriver()
-    {
+    public void initDriver() {
         // Загрузка данных из config.properties
         login = property.getProperty("login");
         password = property.getProperty("password");
@@ -32,14 +31,12 @@ public class MainTest extends BaseTestGrid {
     }
 
     @Test(description = "Запуск браузера и открытие стартовой страницы.", priority = 2)
-    public void launchGoogle()
-    {
+    public void launchGoogle() {
         commonDriver.get("http://google.com");
     }
 
     @Test(description = "Авторизация в Google.", priority = 3)
-    public void loginGmail()
-    {
+    public void loginGmail() {
         homePage = new GoogleHomePage(commonDriver);
         homePage.loginUser(login, password);
     }
@@ -51,7 +48,7 @@ public class MainTest extends BaseTestGrid {
         int letterCount = mailPage.getLetterCount();
         String subject = "Tестовое задание. " + surname;
         mailPage.sendLetter(recipientMail, subject, "Количество писем: " + Integer.toString(letterCount));
-        Assert.assertEquals(mailPage.checkStatus(),true);
+        Assert.assertTrue(mailPage.checkStatus());
     }
 
 }

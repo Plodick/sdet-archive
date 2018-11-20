@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class GoogleHomePageLocators
-{
+public class GoogleHomePageLocators {
+
     protected WebDriver driver;
 
     protected By searchField = By.id("lst-ib"); // поле поиска
