@@ -1,6 +1,5 @@
 package com.core.Tests;
 
-import com.core.BaseTestGrid;
 import com.core.PageObjectModel.PageObjectsMethods.GoogleHomePage;
 import com.core.PageObjectModel.PageObjectsMethods.GoogleMailPage;
 import io.qameta.allure.Severity;
@@ -36,7 +35,7 @@ public class MainTest extends BaseTestGrid {
     }
 
     @Test(description = "Авторизация в Google.", priority = 3)
-    public void loginGmail() {
+    public void loginGMail() {
         homePage = new GoogleHomePage(commonDriver);
         homePage.loginUser(login, password);
     }
